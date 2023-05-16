@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Simple ATM</title>
+    <meta name="author" content="Daniel Zhang" />
+    <meta
+      name="description"
+      content="javascript js ATM programming learning html css while for if "
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      let balance = 100;
+      let flag = true;
+      while (flag) {
+        let money = prompt("Please enter a amount or exit:");
+        if (money === "exit") {
+          alert("You are going to exit. Thank you for your using!");
+          flag = false;
+        } else if (!isNaN(parseFloat(money))) {
+          balance = balance + Number(money);
+          if (money > 0) {
+            let notice =
+              "You are saving money; " +
+              "Amount: " +
+              money +
+              "; The balance: " +
+              balance;
+            alert(notice);
+          } else if (money < 0) {
+            let notice =
+              "You are withdrawing money; " +
+              "Amount: " +
+              money +
+              "; The balance: " +
+              balance;
+            alert(notice);
+          } else if (money == 0) {
+            alert("no change");
+          }
+        } else
+          alert(
+            "You are only allowed to enter a number or exit, please try again!"
+          );
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
